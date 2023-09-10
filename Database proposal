@@ -1,4 +1,32 @@
-Database proposal
 
-Furniture
+
+Project proposal 
+
+ 
+
+Furniture and discounts 
+
+ 
+
+Ex tables – lights, seating, discounts, invoices, clients 
+
+ 
+
+Lights attributes- ID, name, wattage, price, weight, color. 
+
+Seating attributes-ID, name, weight, price, dimensions, color, material 
+
+Discounts- ID, start date of discount, end date of discount, discount amount (%), item ID, number sold during sale. 
+
+Invoices- ID, Client ID, Item ID, Quantity, Total Cost, Date of purchase
+
+Clients- ID, name, Email, Mailing address, Billing address, Credit/debit card # 
+
+ 
+
+Is there a discount happening for any multicolor lights? 
+
+When does the sale end for the love seats? 
+
+How much money was made during a specific sale? 
 
