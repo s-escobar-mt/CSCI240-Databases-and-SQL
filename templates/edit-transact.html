@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Where to update transactions">
+        <meta name="author" content="Sydney">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transactions</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Back to table</a>
+        </nav>
+        <form action="./update_t" method="post">
+            <h2>Update Row</h2>
+            <input type="text" id="{ln}" hidden>
+            <p>Furniture Type:</p>
+            <input type="radio" name="type" id="s" value="S" >
+            <label for=s>Seating</label>
+            <input type="radio" name="type" id="l" value="L">
+            <label for=l>Lighting</label>
+            <br>
+            <p><input type="number" name="quant" placeholder="Quantity"></p>
+            <p>Date time</p>
+            <input type="datetime" name="datetime">
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </body>
+    </html>

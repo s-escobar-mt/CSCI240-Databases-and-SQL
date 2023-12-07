@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Where to update Furniture Table">
+        <meta name="author" content="Sydney">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <nav>
+            <a href="/">Back to table</a>
+        </nav>
+        <form action="/add" method="post">
+            <h2>Add Row</h2>
+            <p>Furniture Type</p>
+            <input type="radio" name="type" id="s" value="S" >
+            <label for=s>Seating</label>
+            <input type="radio" name="type" id="l" value="L">
+            <label for=l>Lighting</label>
+            <br>
+            <p>Dimensions and Weight</p>
+            <p><input type="number" name="width" step=".01">Width</p>
+            <p><input type="number" name="depth" step=".01">Depth</p>
+            <p><input type="number" name="height" step=".01">Height</p>
+            <p><input type="number" name="weight" step=".01">Weight</p>
+            <button type="submit">Submit</button>
+            <br>
+        </form>
+
+        <form action="./delete" method="post">
+            <h2>Delete Row</h2>
+            <input type="number" name="itemid"><p>Enter ID to delete</p>
+            <button type="submit">Submit</button>
+            <br>
+        </form>
+
+        <form action="./update" method="post">
+            <h2>Update Row</h2>
+            <p><input type="number" name="itemid">Enter ID to update</p>
+            <p>Furniture Type</p>
+            <input type="radio" name="type" id="s" value="S" >
+            <label for=s>Seating</label>
+            <input type="radio" name="type" id="l" value="L">
+            <label for=l>Lighting</label>
+            <br>
+            <p><input type="number" name="width" step=".01">Width</p>
+            <p><input type="number" name="depth" step=".01">Depth</p>
+            <p><input type="number" name="height" step=".01">Height</p>
+            <p><input type="number" name="weight">Weight</p>
+            <button type="submit">Submit</button>
+        </form>
+
+    </body>
+    </html>

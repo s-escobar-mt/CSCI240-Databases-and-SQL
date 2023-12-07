@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Transaction table">
+        <meta name="author" content="Sydney">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Furniture Table</title>
+        <style>
+            table{
+                color:rgb(94, 77, 77);
+                border-style: solid;
+                border-width: 2px;
+            }
+        </style>
+    </head>
+    <body style="background-color: rgb(187, 173, 159);">
+        <div>
+            <h1>Transactions</h1>
+            <table style="text-align: center;">
+                <tr>
+                    <th>Item ID</th>
+                    <th>Furniture Type</th>
+                    <th>Quantity</th>
+                    <th>Date Time</th>
+                    <th>Delete/Edit Transaction</th>
+                </tr>
+                {% for row in myresult %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>
+                        <a href="?delete-t=true&ln={{row[5]}}">Delete</a>
+                        <a href="?edit-transact=true&ln={{row[5]}}">Edit</a>
+                    </td>
+                </tr>
+            {% endfor%}
+            </table>
+
+            <a href="?add=true&id={myresult[0][5]}">Add Transaction</a>
+        </div>
+        <div>
+            <nav>
+                <a href="../">Back to Furniture</a>
+            </nav>
+        </div>
+        <div>
+            
+        </div>
+        
+    </body>
+</html>

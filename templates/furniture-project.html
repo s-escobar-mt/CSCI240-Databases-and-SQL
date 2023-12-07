@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Furniture table">
+        <meta name="author" content="Sydney">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Furniture Table</title>
+        <style>
+            table{
+                color:rgb(94, 77, 77);
+                border-style: solid;
+                border-width: 2px;
+            }
+        </style>
+    </head>
+    <body style="background-color: rgb(187, 173, 159);">
+        <div>
+            <h1>Furniture</h1>
+            <table style="text-align: center;">
+                <tr>
+                    <th>Item ID</th>
+                    <th>Furniture Type</th>
+                    <th>Dimensions</th>
+                    <th>Weight</th>
+                    <th>More Info</th>
+                </tr>
+                {% for row in myresult %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td><a href="/details.html?id={{row[0]}}">Details</a></td>
+                </tr>
+                {% endfor%}
+        </div>
+        <div>
+            <nav>
+                <a href="edit-furniture.html">Edit Furniture</a>
+            </nav>
+            <div>
+                <form form name ="select-trans" method="post" action = "transact.html">
+                    <input type="number" id="id" name="id" placeholder="Search Item ID Transactions">
+                    <input type ="submit">
+                </form>
+            </div>
+        </div>
+        </table>
+        
+    </body>
+</html>
