@@ -7,10 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Furniture Table</title>
         <style>
-            table{
-                color:rgb(94, 77, 77);
-                border-style: solid;
-                border-width: 2px;
+            table, th, td {
+                border: 2px solid rgb(48, 41, 41);
+                border-collapse: collapse; 
             }
         </style>
     </head>
@@ -22,20 +21,25 @@
                     <th>Item ID</th>
                     <th>Colors</th>
                     <th>Materials</th>
+                    <th>Remove</th>
                 </tr>
                 
                 {% for row in myresult %}
                 <tr>
+
                     <td>{{row[0]}}</td>
                     <td>{{row[1]}}</td>
                     <td>{{row[2]}}</td>
+                    <td>
+                        <nav>
+                            <a href="/delete_d?id={{row[0]}}">Edit Details</a>
+                        </nav>
+                    </td>
                 </tr>
+                {% endfor%} 
             </table>
-            <nav>
-                <a href="/details.html?id={{row[0]}}">Edit Details</a>
-            </nav>
-            {% endfor%}
             
+             
         </div>
         <div>
             <nav>

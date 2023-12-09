@@ -130,12 +130,13 @@ def details():
     connection = mysql.connector.connect(**creds)
     mycursor = connection.cursor()
     id = request.args.get('id')
-    mycursor.execute("""Select F.ItemID, C.Color, M.Material, F.FurnitureType 
-                    from Furniture F right JOIN Color C on 
-                    F.ItemID=C.ItemID 
-                    left JOIN Material M 
-                    on F.ItemID = M.ItemID and M.ItemID = C.ItemID
-                    where F.ItemID =%s""", (id,))
+    mycursor.execute("""SELECT F.ItemID,
+                GROUP_CONCAT(DISTINCT C.Color ORDER BY C.Color) AS Colors,
+                GROUP_CONCAT(DISTINCT M.Material ORDER BY M.Material) AS Materials
+                FROM Furniture F
+                LEFT JOIN Color C ON F.ItemID = C.ItemID
+                LEFT JOIN Material M ON F.ItemID = M.ItemID
+                WHERE F.ItemID = %s""", (id,))
     myresult = mycursor.fetchall()
     mycursor.close()
     connection.close()

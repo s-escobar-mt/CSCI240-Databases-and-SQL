@@ -12,7 +12,21 @@
             <a href="/">Back to table</a>
         </nav>
         <form action="./update_d" method="post">
-            <h2>Update Row</h2>
+            <h2>Edit</h2>
+            <p>Furniture Type</p>
+            <input type="radio" name="type" id="s" value="S" >
+            <label for=s>Seating</label>
+            <input type="radio" name="type" id="l" value="L">
+            <label for=l>Lighting</label>
+            <br>
+            <input type="color" name="color" placeholder="Color">
+            <input type="checkbox" name="materials" placeholder="Materials">
+            <br>
+            <p><input type="number" name="weight">Weight</p>
+            <button type="submit">Submit</button>
+        </form>
+        <form action="./delete_d" method="post">
+            <h2>Edit</h2>
             <p>Furniture Type</p>
             <input type="radio" name="type" id="s" value="S" >
             <label for=s>Seating</label>
