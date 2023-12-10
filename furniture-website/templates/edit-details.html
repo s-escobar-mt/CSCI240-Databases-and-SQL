@@ -2,42 +2,42 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="Where to update transactions">
+        <meta name="description" content="Where to Edit Details">
         <meta name="author" content="Sydney">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Transactions</title>
+        <title>Edit details</title>
     </head>
     <body>
         <nav>
-            <a href="/">Back to table</a>
+            <a href="../">Back to Furniture</a>
+            <a href="../details.html?id={{info[0]}}">Back to Details</a>
         </nav>
-        <form action="./update_d" method="post">
-            <h2>Edit</h2>
-            <p>Furniture Type</p>
-            <input type="radio" name="type" id="s" value="S" >
-            <label for=s>Seating</label>
-            <input type="radio" name="type" id="l" value="L">
-            <label for=l>Lighting</label>
+        <form action="/add_d" method="post">
+            <h2>Edit Item {{info[0]}} Details</h2>
+            <p>Select Materials</p>
+            {% for row in info[2] %}
+            <input type="checkbox" name="color" id="{{row[0]}}" value="{{row[0]}}">
+            <label for={{row[0]}}>{{row[0]}}</label><br/>
+            {% endfor %}
+            <p>Select Colors</p>
+            {% for row in info[1] %}
+            <input type="checkbox" name="color" id="{{row[0]}}" value="{{row[0]}}">
+            <label for={{row[0]}}>{{row[0]}}</label><br/>
+            {% endfor %}
+            <button type="submit">Add Details</button>
             <br>
-            <input type="color" name="color" placeholder="Color">
-            <input type="checkbox" name="materials" placeholder="Materials">
-            <br>
-            <p><input type="number" name="weight">Weight</p>
-            <button type="submit">Submit</button>
         </form>
-        <form action="./delete_d" method="post">
-            <h2>Edit</h2>
-            <p>Furniture Type</p>
-            <input type="radio" name="type" id="s" value="S" >
-            <label for=s>Seating</label>
-            <input type="radio" name="type" id="l" value="L">
-            <label for=l>Lighting</label>
-            <br>
-            <input type="color" name="color" placeholder="Color">
-            <input type="checkbox" name="materials" placeholder="Materials">
-            <br>
-            <p><input type="number" name="weight">Weight</p>
-            <button type="submit">Submit</button>
+        <form action="/delete_d" method="post">
+            <p>Select Details to delete</p>
+            {% for row in info[4] %}
+            <input type="checkbox" name="color" id="{{row[0]}}" value="{{row[0]}}">
+            <label for={{row[0]}}>{{row[0]}}</label><br/>
+            {% endfor %}
+            {% for row in info[3] %}
+            <input type="checkbox" name="color" id="{{row[0]}}" value="{{row[0]}}">
+            <label for={{row[0]}}>{{row[0]}}</label><br/>
+            {% endfor %}
+            <button type="submit">Delete Selected Details</button>
         </form>
 
     </body>

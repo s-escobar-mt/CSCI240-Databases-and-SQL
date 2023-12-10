@@ -5,22 +5,34 @@
         <meta name="description" content="Transaction table">
         <meta name="author" content="Sydney">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Furniture Table</title>
+        <title>Transaction Table</title>
         <style>
-            table, th, td {
-                border: 2px solid rgb(48, 41, 41);
+            body {
+                font-size: 1.5em;
+            }
+            table {
+                border: 1.5px solid rgb(54, 45, 28);
+            }
+            th, td {
+                border: 1.5px solid rgb(254, 255, 244);
                 border-collapse: collapse; 
             }
+       
         </style>
     </head>
     <body style="background-color: rgb(187, 173, 159);">
         <div>
             <h1>Transactions</h1>
+            <form form name ="select-trans" method="post" action = "transact.html">
+                <input type="number" id="id" name="id" class="input" placeholder="Search Item ID">
+                <button type="submit">Search</button>
+            </form>
             <table style="text-align: center;">
                 <tr>
                     <th>Item ID</th>
                     <th>Furniture Type</th>
                     <th>Quantity</th>
+                    <th>Price</th>
                     <th>Date Time</th>
                     <th>Delete/Edit Transaction</th>
                 </tr>
@@ -29,19 +41,21 @@
                     <td>{{row[0]}}</td>
                     <td>{{row[1]}}</td>
                     <td>{{row[2]}}</td>
-                    <td>{{row[3]}}</td>
+                    <td>&dollar;{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
                     <td>
-                        <a href="?delete-t=true&ln={{row[5]}}">Delete</a>
-                        <a href="?edit-transact=true&ln={{row[5]}}">Edit</a>
+                        <a href="/delete_t?ln={{row[6]}}">Delete (ln={{row[6]}})</a>
+                        <br>
+                        <a href="/edit-transact.html?ln={{row[6]}}">Edit</a>
                     </td>
                 </tr>
-            {% endfor%}
+                {% endfor%}
             </table>
-
-            <a href="?add=true&id={myresult[0][5]}">Add Transaction</a>
         </div>
         <div>
             <nav>
+                <a href="all_transact">View All Transactions</a><br/>
+                <a href="add-transact.html">Add Transaction</a><br/>
                 <a href="../">Back to Furniture</a>
             </nav>
         </div>

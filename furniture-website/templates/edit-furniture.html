@@ -2,9 +2,10 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="Where to update Furniture Table">
+        <meta name="description" content="Where to edit Furniture Table">
         <meta name="author" content="Sydney">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Furniture</title>
     </head>
     <body>
         <nav>
@@ -23,14 +24,14 @@
             <p><input type="number" name="depth" step=".01">Depth</p>
             <p><input type="number" name="height" step=".01">Height</p>
             <p><input type="number" name="weight" step=".01">Weight</p>
-            <button type="submit">Submit</button>
+            <button type="submit">Add</button>
             <br>
         </form>
 
         <form action="./delete" method="post">
             <h2>Delete Row</h2>
-            <input type="number" name="itemid"><p>Enter ID to delete</p>
-            <button type="submit">Submit</button>
+            <input type="number" name="itemid" placeholder="Enter ID to delete">
+            <button type="submit">Delete</button>
             <br>
         </form>
 
@@ -47,7 +48,7 @@
             <p><input type="number" name="depth" step=".01">Depth</p>
             <p><input type="number" name="height" step=".01">Height</p>
             <p><input type="number" name="weight">Weight</p>
-            <button type="submit">Submit</button>
+            <button type="submit">Update</button>
         </form>
 
     </body>

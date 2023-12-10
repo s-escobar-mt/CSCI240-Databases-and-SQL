@@ -6,10 +6,24 @@
         <meta name="author" content="Sydney">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Furniture Table</title>
-        <!--Style sheet-->
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <style>
+            body {
+                font-size: 1.5em;
+            }
+            table {
+                border: 1.5px solid rgb(54, 45, 28);
+            }
+            th, td {
+                border: 1.5px solid rgb(254, 255, 244);
+                border-collapse: collapse; 
+            }
+            .input {
+                width:13.5em;
+            }
+       
+        </style>
     </head>
-    <body>
+    <body style="background-color: rgb(187, 173, 159)">
         <div>
             <h1>Furniture</h1>
             <table style="text-align: center;">
@@ -33,12 +47,10 @@
         <div>
             <nav>
                 <a href="edit-furniture.html">Edit Furniture</a>
+                <a href="all_transact">Transactions</a>
             </nav>
             <div>
-                <form form name ="select-trans" method="post" action = "transact.html">
-                    <input type="number" id="id" name="id" placeholder="Search Item ID Transactions">
-                    <input type ="submit">
-                </form>
+                
             </div>
         </div>
         </table>

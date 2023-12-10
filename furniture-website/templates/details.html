@@ -7,10 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Furniture Table</title>
         <style>
-            table, th, td {
-                border: 2px solid rgb(48, 41, 41);
+            body {
+                font-size: 1.5em;
+            }
+            table {
+                border: 1.5px solid rgb(54, 45, 28);
+            }
+            th, td {
+                border: 1.5px solid rgb(254, 255, 244);
                 border-collapse: collapse; 
             }
+       
         </style>
     </head>
     <body style="background-color: rgb(187, 173, 159);">
@@ -32,7 +39,7 @@
                     <td>{{row[2]}}</td>
                     <td>
                         <nav>
-                            <a href="/delete_d?id={{row[0]}}">Edit Details</a>
+                            <a href="/edit-details.html?itemID={{row[0]}}">Edit Details</a>
                         </nav>
                     </td>
                 </tr>

@@ -55,9 +55,8 @@
             </tr>
             {% endfor %}
         </table>
-        <form action="/edit_t" method="post">
-            <p>Edit Transaction</p>
-            <input type="number" value="{{myresult[]}}"
+        <form action="/add_t" method="post">
+            <p>Add Transaction</p>
             <input type="number" name="itemID" class ="wide" placeholder="Enter Item ID" min="1" max="{{myresult[2][0][0]}}" required><br/>
             <input type="number" name="invoiceID" placeholder="Enter Invoice ID" min="1" required><br/>
             <input type="number" name="quant" placeholder="Enter Quantity" required><br/>
