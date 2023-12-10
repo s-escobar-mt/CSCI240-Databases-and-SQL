@@ -6,22 +6,28 @@
         <meta name="author" content="Sydney">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Edit details</title>
+        <style>
+            body {
+                font-size: 1.5em;
+            }
+        </style>
     </head>
-    <body>
+    <body style="background-color: rgb(187, 173, 159)">
         <nav>
             <a href="../">Back to Furniture</a>
             <a href="../details.html?id={{info[0]}}">Back to Details</a>
         </nav>
         <form action="/add_d" method="post">
             <h2>Edit Item {{info[0]}} Details</h2>
-            <p>Select Materials</p>
+            <input type="number" name="itemID" value="{{info[0]}}" hidden>
+            <p>Select Materials to Add</p>
             {% for row in info[2] %}
-            <input type="checkbox" name="color" id="{{row[0]}}" value="{{row[0]}}">
+            <input type="checkbox" name="materials" id="{{row[0]}}" value="{{row[0]}}">
             <label for={{row[0]}}>{{row[0]}}</label><br/>
             {% endfor %}
-            <p>Select Colors</p>
+            <p>Select Colors to Add</p>
             {% for row in info[1] %}
-            <input type="checkbox" name="color" id="{{row[0]}}" value="{{row[0]}}">
+            <input type="checkbox" name="colors" id="{{row[0]}}" value="{{row[0]}}">
             <label for={{row[0]}}>{{row[0]}}</label><br/>
             {% endfor %}
             <button type="submit">Add Details</button>
@@ -29,15 +35,16 @@
         </form>
         <form action="/delete_d" method="post">
             <p>Select Details to delete</p>
+            <input type="number" name="itemID" value="{{info[0]}}" hidden>
             {% for row in info[4] %}
-            <input type="checkbox" name="color" id="{{row[0]}}" value="{{row[0]}}">
+            <input type="checkbox" name="c-materials" id="{{row[0]}}" value="{{row[0]}}">
             <label for={{row[0]}}>{{row[0]}}</label><br/>
             {% endfor %}
             {% for row in info[3] %}
-            <input type="checkbox" name="color" id="{{row[0]}}" value="{{row[0]}}">
+            <input type="checkbox" name="c-colors" id="{{row[0]}}" value="{{row[0]}}">
             <label for={{row[0]}}>{{row[0]}}</label><br/>
             {% endfor %}
-            <button type="submit">Delete Selected Details</button>
+            <button type="submit">Delete Details</button>
         </form>
 
     </body>

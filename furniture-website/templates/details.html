@@ -12,10 +12,12 @@
             }
             table {
                 border: 1.5px solid rgb(54, 45, 28);
+                text-align: center;
             }
             th, td {
                 border: 1.5px solid rgb(254, 255, 244);
                 border-collapse: collapse; 
+                padding:.5em 1em .5em 1em;
             }
        
         </style>
@@ -28,7 +30,7 @@
                     <th>Item ID</th>
                     <th>Colors</th>
                     <th>Materials</th>
-                    <th>Remove</th>
+                    <th>Edit Details</th>
                 </tr>
                 
                 {% for row in myresult %}
@@ -39,7 +41,7 @@
                     <td>{{row[2]}}</td>
                     <td>
                         <nav>
-                            <a href="/edit-details.html?itemID={{row[0]}}">Edit Details</a>
+                            <a href="/edit-details.html?itemID={{row[0]}}">Edit</a>
                         </nav>
                     </td>
                 </tr>

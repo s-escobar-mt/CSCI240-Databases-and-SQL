@@ -6,24 +6,30 @@
         <meta name="author" content="Sydney">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Edit Furniture</title>
+        <style>
+            body {
+                font-size: 1.3em;
+            }
+
+        </style>
     </head>
-    <body>
+    <body style="background-color: rgb(187, 173, 159)">
         <nav>
             <a href="/">Back to table</a>
         </nav>
         <form action="/add" method="post">
             <h2>Add Row</h2>
-            <p>Furniture Type</p>
+            <h4>Furniture Type:</h4>
             <input type="radio" name="type" id="s" value="S" >
             <label for=s>Seating</label>
             <input type="radio" name="type" id="l" value="L">
             <label for=l>Lighting</label>
-            <br>
-            <p>Dimensions and Weight</p>
-            <p><input type="number" name="width" step=".01">Width</p>
-            <p><input type="number" name="depth" step=".01">Depth</p>
-            <p><input type="number" name="height" step=".01">Height</p>
-            <p><input type="number" name="weight" step=".01">Weight</p>
+            <br/>
+            <h4>Dimensions and Weight:</h4>
+            <input type="number" name="width" step=".01" placeholder="Width">
+            <input type="number" name="depth" step=".01" placeholder="Depth">
+            <input type="number" name="height" step=".01" placeholder="Height"><br/>
+            <input type="number" name="weight" step=".01" placeholder="Weight"><br/>
             <button type="submit">Add</button>
             <br>
         </form>
@@ -37,17 +43,18 @@
 
         <form action="./update" method="post">
             <h2>Update Row</h2>
-            <p><input type="number" name="itemid">Enter ID to update</p>
-            <p>Furniture Type</p>
+            <p><input type="number" name="itemid" placeholder="Enter ID to update"></p>
+            <h4>Furniture Type:</h4>
             <input type="radio" name="type" id="s" value="S" >
             <label for=s>Seating</label>
             <input type="radio" name="type" id="l" value="L">
             <label for=l>Lighting</label>
-            <br>
-            <p><input type="number" name="width" step=".01">Width</p>
-            <p><input type="number" name="depth" step=".01">Depth</p>
-            <p><input type="number" name="height" step=".01">Height</p>
-            <p><input type="number" name="weight">Weight</p>
+            <br/>
+            <h4>Dimensions and Weight:</h4>
+            <input type="number" name="width" step=".01" placeholder="Width">
+            <input type="number" name="depth" step=".01" placeholder="Depth">
+            <input type="number" name="height" step=".01" placeholder="Height"><br/>
+            <input type="number" name="weight" step=".01" placeholder="Weight"><br/>
             <button type="submit">Update</button>
         </form>
 

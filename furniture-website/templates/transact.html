@@ -16,6 +16,7 @@
             th, td {
                 border: 1.5px solid rgb(254, 255, 244);
                 border-collapse: collapse; 
+                padding:.3em .7em .3em .7em;
             }
        
         </style>
@@ -23,13 +24,23 @@
     <body style="background-color: rgb(187, 173, 159);">
         <div>
             <h1>Transactions</h1>
-            <form form name ="select-trans" method="post" action = "transact.html">
-                <input type="number" id="id" name="id" class="input" placeholder="Search Item ID">
-                <button type="submit">Search</button>
-            </form>
+            <div>
+                <nav>
+                    <a href="all_transact">View All Transactions</a><br/>
+                    <a href="add-transact.html">Add Transaction</a><br/>
+                    <a href="../">Back to Furniture</a>
+                </nav>
+            </div>
+            <div>
+                <form form name ="select-trans" method="post" action = "transact.html">
+                    <input type="number" id="id" name="id" class="input" placeholder="Search Item ID">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
             <table style="text-align: center;">
                 <tr>
                     <th>Item ID</th>
+                    <th>Invoice ID</th>
                     <th>Furniture Type</th>
                     <th>Quantity</th>
                     <th>Price</th>
@@ -39,12 +50,13 @@
                 {% for row in myresult %}
                 <tr>
                     <td>{{row[0]}}</td>
+                    <td>{{row[5]}}</td>
                     <td>{{row[1]}}</td>
                     <td>{{row[2]}}</td>
                     <td>&dollar;{{row[3]}}</td>
                     <td>{{row[4]}}</td>
                     <td>
-                        <a href="/delete_t?ln={{row[6]}}">Delete (ln={{row[6]}})</a>
+                        <a href="/delete_t?ln={{row[6]}}">Delete</a>
                         <br>
                         <a href="/edit-transact.html?ln={{row[6]}}">Edit</a>
                     </td>
@@ -52,13 +64,7 @@
                 {% endfor%}
             </table>
         </div>
-        <div>
-            <nav>
-                <a href="all_transact">View All Transactions</a><br/>
-                <a href="add-transact.html">Add Transaction</a><br/>
-                <a href="../">Back to Furniture</a>
-            </nav>
-        </div>
+        
         <div>
             
         </div>

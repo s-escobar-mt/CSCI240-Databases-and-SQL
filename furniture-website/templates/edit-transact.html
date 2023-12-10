@@ -21,7 +21,7 @@
             .wide{
                 width: 12.1em;
             }
-       
+            
         </style>
     </head>
     <body style="background-color: rgb(187, 173, 159)">
@@ -29,40 +29,44 @@
             <a href="../">Back to Furniture</a>
             <a href="../all_transact">Back to Transactions</a>
         </nav>
-        <p>Existing Invoices:</p>
-        <table>
-            <tr>
-                <th>Invoice ID</th>
-                <th>DateTime</th>
-            </tr>
-            {% for row in myresult[0] %}
-            <tr>
-                <td>{{row[0]}}</td>
-                <td>{{row[1]}}</td>
-            </tr>
-            {% endfor %}
-        </table>
-        <p>Existing Furniture:</p>
-        <table float="right">
-            <tr>
-                <th>Item ID</th>
-                <th>Furniture Type</th>
-            </tr>
-            {% for row in myresult[1] %}
-            <tr>
-                <td>{{row[0]}}</td>
-                <td>{{row[1]}}</td>
-            </tr>
-            {% endfor %}
-        </table>
+        <div>
+            <p>Existing Invoices:</p>
+            <table>
+                <tr>
+                    <th>Invoice ID</th>
+                    <th>DateTime</th>
+                </tr>
+                {% for row in myresult[0] %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div>
+            <p>Existing Furniture:</p>
+            <table>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Furniture Type</th>
+                </tr>
+                {% for row in myresult[1] %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
         <form action="/edit_t" method="post">
             <p>Edit Transaction</p>
-            <input type="number" value="{{myresult[]}}"
+            <input type="number" name='ln' value="{{myresult[3]}}" hidden>
             <input type="number" name="itemID" class ="wide" placeholder="Enter Item ID" min="1" max="{{myresult[2][0][0]}}" required><br/>
             <input type="number" name="invoiceID" placeholder="Enter Invoice ID" min="1" required><br/>
             <input type="number" name="quant" placeholder="Enter Quantity" required><br/>
             <input type="number" name="price" placeholder="Enter Price" step=".01" required><br/>
-            <button type="submit">Add transaction</button>
+            <button type="submit">Submit</button>
         </form>
 
     </body>
